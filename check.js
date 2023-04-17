@@ -10,6 +10,10 @@ const ethereum2 = new Web3(new Web3.providers.HttpProvider(process.env.PRIVATE_E
 const arbitrum = new Web3(new Web3.providers.HttpProvider(process.env.PRIVATE_ARBITRUM_1));
 const arbitrum2 = new Web3(new Web3.providers.HttpProvider(process.env.PRIVATE_ARBITRUM_2));
 
+
+const arbitrum3 = new Web3(new Web3.providers.HttpProvider(process.env.PRIVATE_ARBITRUM_3));
+const arbitrum4 = new Web3(new Web3.providers.HttpProvider(process.env.PRIVATE_ARBITRUM_4));
+
 console.log("\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::")
 console.log("::::::::::::::::::::::::::::::::: CURRENT BLOCK NUMBER :::::::::::::::::::::::::::::::::\n")
 
@@ -59,6 +63,22 @@ arbitrum.eth.getBlockNumber()
 arbitrum2.eth.getBlockNumber()
   .then(blockNumber => {
     console.log(`=====> ARBITRUM-2 ::: ${blockNumber}`);
+  })
+  .catch(error => {
+    console.error(error);
+  });
+
+arbitrum3.eth.getBlockNumber()
+  .then(blockNumber => {
+    console.log(`=====> ARBITRUM-3 [AWS] ::: ${blockNumber}`);
+  })
+  .catch(error => {
+    console.error(error);
+  });
+
+arbitrum4.eth.getBlockNumber()
+  .then(blockNumber => {
+    console.log(`=====> ARBITRUM-4 [AWS] ::: ${blockNumber}`);
   })
   .catch(error => {
     console.error(error);
